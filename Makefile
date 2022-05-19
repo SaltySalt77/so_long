@@ -6,7 +6,7 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 12:17:02 by hyna              #+#    #+#              #
-#    Updated: 2022/05/19 16:36:29 by hyna             ###   ########.fr        #
+#    Updated: 2022/05/19 16:44:22 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CCFLAGS = -framework OpenGL -framework AppKit
 INC_LINK = -I./includes
 LIBS = -L./minilibx_opengl_20191021\
 	   -L./lib/mlx -lmlx\
-	   -L./lib/libft -lft\
+	   #-L./lib/libft -lft\
 
 SRCS_NAME = main.c
 SRCS_PATH = ./srcs
@@ -30,7 +30,7 @@ OBJS = $(addprefix $(OBJS_PATH)/, $(OBJS_NAME))
 
 all : $(NAME)
 
-$(NAME) : $(OBJS) libft 
+$(NAME) : $(OBJS) 
 	$(CC) $(CCFLAGS) $(LIBS) $(FRA_WRK) -o $(NAME) $(OBJS)
 
 $(OBJS_PATH)/%.o : $(SRCS_PATH)/%.c
