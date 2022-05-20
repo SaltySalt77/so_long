@@ -6,7 +6,7 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 12:17:02 by hyna              #+#    #+#              #
-#    Updated: 2022/05/19 17:46:09 by hyna             ###   ########.fr        #
+#    Updated: 2022/05/20 15:53:12 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = so_long
 CC = cc
 CCFLAGS = -framework OpenGL -framework AppKit
 INC_LINK = -I./includes
-LIBS = -L./minilibx_opengl_20191021\
+LIBS = -L./lib/minilibx_opengl\
 	   -L./lib/mlx -lmlx\
 	   #-L./lib/libft -lft\
 
@@ -29,11 +29,11 @@ OBJS = $(addprefix $(OBJS_PATH)/, $(OBJS_NAME))
 all : $(NAME)
 
 $(NAME) : $(OBJS) 
-	$(CC) $(CCFLAGS) $(LIBS) $(FRA_WRK) -o $(NAME) $(OBJS)
+	$(CC) $(CCFLAGS) $(LIBS) -o $(NAME) $(OBJS)
 
 $(OBJS_PATH)/%.o : $(SRCS_PATH)/%.c
 	@mkdir $(OBJS_PATH) 2> /dev/null || true
-	$(CC) $(LIBS) $(CCFLAGS) -c $< -o $@
+	$(CC) $(INC_LINK) $(LIBS) $(CCFLAGS) -c $< -o $@
 
 libft :
 	@$(MAKE) -C ./lib/libft all
