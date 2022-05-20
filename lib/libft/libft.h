@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:10:43 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/26 13:57:59 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/20 19:42:51 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_memcmp(const void	*s1, const void	*s2, size_t	n);
+int		ft_putnbr_base(long long nbr, char	*base);
 int		ft_strncmp(const char	*s1, const char	*s2, size_t	n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);

@@ -54,6 +54,12 @@ SRCS	 =	ft_isalpha.c	\
 			ft_lstmap.c				\
 			get_next_line.c			\
 			get_next_line_utils.c	\
+			conversion_p_utils.c	\
+			conversion_x_utils.c	\
+			ft_printf.c				\
+			print_in_conversions1.c	\
+			print_in_conversions2.c	\
+			ft_putnbr_base.c	\
 
 OBJS = $(SRCS:.c=.o)
 
