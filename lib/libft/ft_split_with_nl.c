@@ -6,50 +6,13 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:31:14 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 17:05:15 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 18:00:49 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char const	*s, char c)
-{
-	int	count;
-	int	i;
-
-	i = 0;
-	count = 0;
-	if (s[i] && (s[i] == c))
-		i++;
-	while (s[i])
-	{
-		while (s[i] && (s[i] != c))
-			i++;
-		count++;
-		while (s[i] && (s[i] == c))
-		{
-			i++;
-			count++;
-		}
-	}
-	return (count);
-}
-
-static char	*word_split(char const	*s, char c, int *j)
-{
-	int	i;
-
-	i = *j;
-	if (s[*j] == c)
-		return (ft_substr(s, *j, ++(*j) - i));
-	while (s[*j] != c)
-		(*j)++;
-	if (s[*j] == c)
-		return (ft_substr(s, *j, ++(*j) - i));
-	return (NULL);
-}
-
-static void	free_everything(char	**result)
+static char	**free_everything(char	**result)
 {
 	int	i;
 
@@ -60,35 +23,31 @@ static void	free_everything(char	**result)
 		i++;
 	}
 	free(result);
+	return (NULL);
 }
 
 char	**ft_split_with_nl(char const	*s)
 {
-	char	**result;
-	char	c;
-	int		j;
-	int		k;
-	int		count;
+	char	**no_nl_str;
+	char	**with_nl_str;
+	int		i;
+	int		len;
 
-	j = 0;
-	k = 0;
-	c = '\n';
-	if (!s)
+	i = 0;
+	len = 0;
+	no_nl_str = ft_split(s, '\n');
+	if (no_nl_str == NULL)
 		return (NULL);
-	count = word_count(s, c);
-	result = (char **) malloc((count + 1) * sizeof(char *));
-	if (!(result))
-		return (NULL);
-	while (k < count)
+	while (no_nl_str[len] != NULL)
+		len++;
+	with_nl_str = malloc(sizeof(char *) * (len + 1));
+	while (i < len)
 	{
-		result[k] = word_split(s, c, &j);
-		if (!result[k])
-		{
-			free_everything(result);
-			return (NULL);
-		}
-		k++;
+		with_nl_str[i] = ft_strjoin(no_nl_str[i], "\n");
+		if (with_nl_str[i] == NULL)
+			return (free_everything(with_nl_str));
+		i++;
 	}
-	result[k] = NULL;
-	return (result);
+	with_nl_str[i] = NULL;
+	return (with_nl_str);
 }

@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:49:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 15:43:46 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 20:45:59 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 
 # define CLOSE_WIN	17
 
-# define AIR		0
-# define WALL		1
+# define AIR		48
+# define WALL		49
 # define COLECT		67
 # define EXIT		69
 # define PLAYER		80
@@ -44,6 +44,7 @@ typedef struct s_img_vars {
 	int					height;
 	int					*xpos;
 	int					*ypos;
+	int					count;
 	struct s_img_vars	*next;
 }	t_img_vars;
 
@@ -54,7 +55,10 @@ typedef struct s_map_size {
 	struct s_img_vars	*img_vars;
 }	t_map_size;
 
+t_map_size	get_map_info(t_map_size	map);
 void	put_error_message_exit(const char	*str, int error);
+void	updat_positions(t_img_vars	*head, int type, int x, int y);
+int		is_map(t_map_size map);
 int		map_processor(char	*map_file, t_map_size	map);
 
 #endif

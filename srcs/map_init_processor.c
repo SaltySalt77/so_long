@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:20:15 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 16:58:19 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 20:45:47 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "get_next_line.h"
 #include "libft.h"
 
-t_map_size	get_map_size(t_map_size	map)
+static t_map_size	get_map_size(t_map_size	map)
 {
 	int	height;
 
@@ -54,12 +54,14 @@ int	map_processor(char	*map_file, t_map_size	map)
 	char	*map_str;
 
 	map_str = read_and_restore_map(map_file);
-	map.map = ft_split_with_nl(map_str);
+	map.map = ft_split(map_str, '\n');
 	if (map.map == NULL)
 		return (0);
-	for (int i = 0; map.map[i]; i++)
-		printf("%s", map.map[i]);
 	map = get_map_size(map);
-	printf("%d %d\n", map.height, map.width);
+	if (is_map(map))
+		printf("this is a map");
+	else
+		printf("this is not a map");
+	map = get_map_info(map);
 	return (1);
 }
