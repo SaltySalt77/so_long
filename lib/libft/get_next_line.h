@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 18:18:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 13:56:24 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 15:58:25 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
-char	*ft_strchr(const char *s, int c);
 char	*get_next_line(int fd);
 char	*free_str(char	*s);
-size_t	ft_strlen(const char *s);
 
 #endif

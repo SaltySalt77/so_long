@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:10:43 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/26 13:57:59 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 15:50:35 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*ft_itoa(int n);
 char	*ft_strchr(const char	*s, int c);
 char	*ft_strdup(const char	*s1);
 char	*ft_strjoin(char const	*s1, char const	*s2);
+char	*ft_strjoin_free(char const	*s1, char const	*s2);
 char	*ft_strmapi(char const	*s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char	*big, const char	*little, size_t	len);
 char	**ft_split(char const	*s, char c);
@@ -48,6 +49,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_memcmp(const void	*s1, const void	*s2, size_t	n);
+int		ft_putnbr_base(long long nbr, char	*base);
 int		ft_strncmp(const char	*s1, const char	*s2, size_t	n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);

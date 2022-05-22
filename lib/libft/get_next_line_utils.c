@@ -6,35 +6,11 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 18:17:45 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/14 18:18:25 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 15:59:43 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-char	*ft_strchr(const char	*s, int c)
-{
-	char	tmp;
-
-	if (!s)
-		return (NULL);
-	tmp = (char)c;
-	while ((*s) && (*s != tmp))
-		s++;
-	if (*s == tmp)
-		return ((char *)s);
-	return (NULL);
-}
-
-size_t	ft_strlen(const char	*s)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
+#include <stdlib.h>
 
 char	*free_str(char	*s)
 {

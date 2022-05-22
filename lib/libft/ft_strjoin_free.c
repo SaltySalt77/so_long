@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 10:19:24 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 15:49:00 by hyna             ###   ########.fr       */
+/*   Created: 2022/05/22 15:48:11 by hyna              #+#    #+#             */
+/*   Updated: 2022/05/22 15:48:28 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const	*s1, char const *s2)
+char	*ft_strjoin_free(char	*s1, char *s2)
 {
 	char	*result;
 	size_t	len;
@@ -20,8 +20,10 @@ char	*ft_strjoin(char const	*s1, char const *s2)
 	size_t	s2len;
 	size_t	pos;
 
-	if (!s1 || !s2)	
-		return (NULL);
+	if (!s1)
+		return (s2);
+	else if (!s2)
+		return (s1);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
 	len = s1len + s2len;
@@ -34,5 +36,7 @@ char	*ft_strjoin(char const	*s1, char const *s2)
 	pos = 0;
 	while (pos < s2len)
 		result[s1len++] = s2[pos++];
+	free(s1);
+	free(s2);
 	return (result);
 }

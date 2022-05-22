@@ -1,4 +1,6 @@
 *.o
 */*.o
+lib/libft/*.o
+lib/libft/*.a
 a.out
 so_long

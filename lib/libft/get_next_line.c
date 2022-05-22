@@ -6,11 +6,12 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 18:17:22 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/14 18:17:29 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 15:58:48 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
 static char	*mv_backup(char	*backup, int	*check)
 {
