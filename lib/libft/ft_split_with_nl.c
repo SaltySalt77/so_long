@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:31:14 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 16:49:42 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 17:05:15 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	word_count(char const	*s, char c)
 
 	i = 0;
 	count = 0;
-	while (s[i] && (s[i] == c))
+	if (s[i] && (s[i] == c))
 		i++;
 	while (s[i])
 	{
@@ -27,7 +27,10 @@ static int	word_count(char const	*s, char c)
 			i++;
 		count++;
 		while (s[i] && (s[i] == c))
+		{
 			i++;
+			count++;
+		}
 	}
 	return (count);
 }
