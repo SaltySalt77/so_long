@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_check.c                                        :+:      :+:    :+:   */
+/*   map_check2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 18:06:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 20:45:35 by hyna             ###   ########.fr       */
+/*   Created: 2022/05/22 19:40:12 by hyna              #+#    #+#             */
+/*   Updated: 2022/05/22 21:14:00 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "libft.h"
 
-int	is_map(t_map_size	map)
+static void	update_positions(t_img_vars	*head, int type, int x, int y)
 {
-	int	i;
+	t_img_vars	*to_change;
 
-	i = 0;
-	while (i < map.width)
+	to_change = head;
+	while (to_change->type != type && to_change != NULL)
+		to_change = to_change->next;
+	if (to_change->type == type)
 	{
-		if (map.map[0][i] != WALL || map.map[map.height - 1][i] != WALL)
-		{
-			printf("%c %c\n", map.map[0][i], map.map[map.height - 1][i]);
-			return (0);
-		}
-		i++;
+		to_change->xpos = ft_arrjoin(to_change->xpos, x, to_change->count);
+		to_change->ypos = ft_arrjoin(to_change->ypos, y, to_change->count);
+		to_change->count++;
 	}
-	i = 0;
-	while (i < map.height)
-	{
-		if (map.map[i][0] != WALL || map.map[i][map.width - 1] != WALL)
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
 static t_img_vars	*new_img_vars(int type)
@@ -57,10 +49,10 @@ static t_img_vars	*put_types_in_img_vars(t_img_vars	*head)
 
 	current = head;
 	current->type = WALL;
-	new->count = 0;
-	new->xpos = NULL;
-	new->ypos = NULL;
-	new->next = NULL;
+	current->count = 0;
+	current->xpos = NULL;
+	current->ypos = NULL;
+	current->next = NULL;
 	current->next = new_img_vars(COLECT);
 	current = current->next;
 	current->next = new_img_vars(EXIT);
@@ -69,7 +61,7 @@ static t_img_vars	*put_types_in_img_vars(t_img_vars	*head)
 	return (head);
 }	
 
-t_map_size	get_map_info(t_map_size	map)
+void	get_map_info(t_map_size	*map)
 {
 	t_img_vars	*head;
 	int			y;
@@ -77,25 +69,24 @@ t_map_size	get_map_info(t_map_size	map)
 
 	y = 0;
 	head = malloc(sizeof(t_img_vars));
-	map.img_vars = put_types_in_img_vars(head);
-	while (y < map.height)
+	map->img_vars = put_types_in_img_vars(head);
+	while (y < map->height)
 	{
 		x = 0;
-		while (x < map.width)
+		while (x < map->width)
 		{
-			if (map.map[y][x] == WALL)
-				update_positions(head, WALL, j, i);
-			else if (map.map[y][x] == COLECT)
-				update_positions(head, COLECT, j, i);
-			else if (map.map[y][x] == EXIT)
-				update_positions(head, EXIT, j, i);
-			else if (map.map[y][x] == PLAYER)
-				update_positions(head, PLAYER, j, i);
-			else if (map.map[y][x] != AIR)
-				put_error_message_exit("Error! map has anouther alphabet.", 0);
+			if (map->map[y][x] == WALL)
+				update_positions(head, WALL, x, y);
+			else if (map->map[y][x] == COLECT)
+				update_positions(head, COLECT, x, y);
+			else if (map->map[y][x] == EXIT)
+				update_positions(head, EXIT, x, y);
+			else if (map->map[y][x] == PLAYER)
+				update_positions(head, PLAYER, x, y);
+			else if (map->map[y][x] != AIR)
+				put_error_message_exit("Error! map has anouther alphabet->", 0);
 			x++;
 		}
 		y++;
 	}
-	return (map);
 }

@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:20:15 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 20:45:47 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 21:09:21 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,9 @@ int	map_processor(char	*map_file, t_map_size	map)
 	if (map.map == NULL)
 		return (0);
 	map = get_map_size(map);
-	if (is_map(map))
+	if (is_map(&map))
 		printf("this is a map");
 	else
 		printf("this is not a map");
-	map = get_map_info(map);
 	return (1);
 }

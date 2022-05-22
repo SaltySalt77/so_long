@@ -6,7 +6,7 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 12:17:02 by hyna              #+#    #+#              #
-#    Updated: 2022/05/22 18:23:01 by hyna             ###   ########.fr        #
+#    Updated: 2022/05/22 21:08:00 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ LIBS = -L./lib/minilibx_opengl\
 
 SRCS_NAME = main.c\
 			map_init_processor.c\
-			map_check.c
+			is_map.c\
+			get_map_info.c
 SRCS_PATH = ./srcs
 SRCS = $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
 
