@@ -17,7 +17,7 @@ int	conversion_c(va_list	ap)
 	int		result;
 	char	c;
 
-	c = va_arg(ap, int); // va_arg 2nd param
+	c = va_arg(ap, int);
 	result = write(1, &c, 1);
 	return (result);
 }
@@ -28,9 +28,9 @@ int	conversion_s(va_list	ap)
 	char	*s;
 
 	s = va_arg(ap, char *);
-	if (!s) // <- 지양 // 클린코드, 리팩토링, 유지보수하기어렵게코딩하는법
-		return (write(1, "(null)", 6)); // 문자열 매크로 // 특정 상수 매직넘버 지양
-	result = write(STDOUT_FILENO, s, ft_strlen(s));
+	if (!s)
+		return (write(1, "(null)", 6));
+	result = write(1, s, ft_strlen(s));
 	return (result);
 }
 
@@ -38,14 +38,13 @@ int	conversion_di(va_list	ap)
 {
 	int		result;
 	int		num;
-	char	*s; // 알파벳 하나짜리 변수명 지양
+	char	*s;
 
 	num = va_arg(ap, int);
 	s = ft_itoa(num);
-	if (!s) // 부정
-		return (-1); // 매직넘버
+	if (!s)
+		return (-1);
 	result = write(1, s, ft_strlen(s));
 	free(s);
-	s = NULL;
 	return (result);
 }

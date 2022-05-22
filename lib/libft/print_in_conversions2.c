@@ -18,7 +18,7 @@ int	conversion_p(va_list	ap)
 	unsigned long long	pointer;
 
 	result = 0;
-	pointer = (unsigned long long) va_arg(ap, void *); // 64바이트 -> size_t
+	pointer = (unsigned long long) va_arg(ap, void *);
 	result += write(1, "0x", 2);
 	result += conversion_p_util(pointer, "0123456789abcdef");
 	return (result);

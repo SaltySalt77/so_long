@@ -12,10 +12,6 @@
 
 #include "ft_printf.h"
 
-// 좋은 함수를 만드는 방법
-// 1. 가장 최소 단위로 하나의 역할만 하는 함수로 만든다
-// 2. 함수명은 동사 + 명사 ex) handle_xxx_error()
-
 static int	result_len(long long n, int base_len)
 {
 	int	len;
@@ -31,7 +27,6 @@ static int	result_len(long long n, int base_len)
 	return (len);
 }
 
-// 함수명
 static void	ft_rev(char	*tab, int size)
 {
 	char	temp;
@@ -73,7 +68,6 @@ char	*ft_itoa_base(unsigned int n, char	*base)
 	result = (char *) ft_calloc(result_len(n, ft_strlen(base)), sizeof(char));
 	if (result == NULL)
 		return (NULL);
-	// make_result
 	make_result(n, result, result_len(n, ft_strlen(base)) - 1, base);
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:49:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/20 16:17:12 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/20 20:55:36 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 # define SO_LONG_H
 
 # include <mlx.h>
-# include <libft.h>
-# include <get_next_line.h>
+# include "libft.h"
+# include "get_next_line.h"
+# include "ft_printf.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 
 # define KEY_LEFT	123
 # define KEY_RIGHT	124
