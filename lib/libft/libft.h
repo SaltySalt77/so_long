@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:10:43 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 15:52:15 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/22 16:50:00 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_strjoin_free(char	*s1, char	*s2);
 char	*ft_strmapi(char const	*s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char	*big, const char	*little, size_t	len);
 char	**ft_split(char const	*s, char c);
+char	**ft_split_with_nl(char const	*s);
 char	*ft_strtrim(char const	*s1, char const	*set);
 char	*ft_strrchr(const char	*s, int c);
 char	*ft_substr(char const	*s, unsigned int start, size_t	len);
