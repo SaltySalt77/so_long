@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 01:09:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 02:44:27 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 02:54:39 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	mv_to_colect(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 	curt->xpos = ft_arr_del_one(curt->xpos, curt->count, x);
 	curt->ypos = ft_arr_del_one(curt->ypos, curt->count, y);
 	curt->count--;
-	printf("%d\n", curt->count);
 	map[y][x] = PLAYER;
 }
 
