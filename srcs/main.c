@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 21:32:15 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 03:51:21 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	put_error_message_exit(const char	*str, int error)
 	if (error != 0)
 		perror(str);
 	else
-		printf("Error! %s\n", str);
+		printf("Error\n %s\n", str);
 	exit(0);
 }
 
@@ -52,7 +52,6 @@ int	main(int argc, char	**argv)
 {
 	t_mlx_ptr	mlx_vars;
 	t_map_size	map;
-	void		*win;
 
 	if (!is_map_file(argc, argv))
 		put_error_message_exit("the argument is not a map file.", 0);
@@ -60,7 +59,6 @@ int	main(int argc, char	**argv)
 	get_mlx_ptr(&mlx_vars, &map, "so_long");
 	get_img_ptr(mlx_vars.mlx, map.img_vars);
 	load_map(mlx_vars, &map);
-	printf("done!!\n");
 	mlx_key_hook(mlx_vars.win, &moving_processor, &mlx_vars);
 	mlx_hook(mlx_vars.win, CLOSE_WIN, 0, &exit_game, &mlx_vars);
 	mlx_loop(mlx_vars.mlx);

@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:49:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 02:20:25 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 03:21:32 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # define KEY_DOWN	1
 # define KEY_RIGHT	2
 
+# define ESC		53
 # define CLOSE_WIN	17
 
 # define AIR		48

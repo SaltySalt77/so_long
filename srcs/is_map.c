@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 19:02:05 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 03:53:46 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ static void	is_square(t_map_size	*map)
 {
 	char	*error_message;
 	int		i;
+	int		wid;
 
 	i = 0;
 	error_message = "the map must be square.";
 	while (i < map->ht)
 	{
-		if (ft_strlen(map->map[i]) != map->wid)
+		wid = (int) ft_strlen(map->map[i]);
+		if (wid != map->wid)
 			put_error_message_exit(error_message, 0);
 		i++;
 	}

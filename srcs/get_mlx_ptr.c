@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:23:57 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 21:37:37 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 03:26:36 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	get_mlx_ptr(t_mlx_ptr	*mlx_vars, t_map_size	*map, char	*title)
 	ht = SIZE * map->ht;
 	mlx_vars->mlx = mlx_init();
 	if (mlx_vars->mlx == NULL)
-		put_error_message_exit("Error! get_mlx_vars", 1);
+		put_error_message_exit("get_mlx_vars", 1);
 	mlx_vars->win = mlx_new_window(mlx_vars->mlx, wid, ht, title);
 	if (mlx_vars->win == NULL)
-		put_error_message_exit("Error! get_mlx_vars", 1);
+		put_error_message_exit("get_mlx_vars", 1);
 	mlx_vars->map = map;
 }

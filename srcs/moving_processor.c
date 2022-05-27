@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 21:42:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 01:20:37 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 03:56:35 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static int	is_possible_movent(char	**map, t_img_vars	*img, int direction)
 		return (0);
 	img->xpos = ft_arrjoin(img->xpos, x, 1);
 	img->ypos = ft_arrjoin(img->ypos, y, 1);
+	if (img->xpos == NULL || img->ypos == NULL)
+		put_error_message_exit("ft_arrjoin ", 1);
 	img->count += 1;
 	return (1);
 }
@@ -60,16 +62,27 @@ int	get_dest_type(char	**map, t_img_vars	*player)
 	return (type);
 }
 
+static void	put_movment_count(t_img_vars	*img)
+{
+	t_img_vars	*curt;
+
+	curt = find_img_info(img, AIR);
+	curt->count++;
+	printf("%d\n", curt->count);
+}
+
 int	moving_processor(int keycode, t_mlx_ptr	*mlx_vars)
 {
 	t_map_size	*map;
 	t_img_vars	*player;
-	int			type;
 
+	if (keycode == ESC)
+		exit(0);
 	map = mlx_vars->map;
 	player = find_img_info(map->img_vars, PLAYER);
 	if (!is_possible_movent(map->map, player, keycode))
 		return (1);
+	put_movment_count(map->img_vars);
 	mv_player(mlx_vars, map->map, map->img_vars);
 	return (0);
 }
