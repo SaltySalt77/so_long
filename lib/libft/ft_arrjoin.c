@@ -6,13 +6,13 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 19:28:24 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 20:00:10 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 06:06:54 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	*ft_arrjoin(int	*arr, int newnbr, int	count)
+int	*ft_arrjoin(int	*arr, int newnbr, int count)
 {
 	int	*new_arr;
 	int	i;

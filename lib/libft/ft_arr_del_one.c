@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 21:46:05 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 01:23:04 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 06:08:17 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	*ft_arr_del_one(int	*arr, int count, int idx)
 			j++;
 			continue ;
 		}
-		new_arr[i] = arr[j]; 
+		new_arr[i] = arr[j];
 		i++;
 		j++;
 	}
