@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:20:15 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 03:38:17 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 05:06:18 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	map_processor(char	*map_file, t_map_size	*map)
 	map->map = ft_split(map_str, '\n');
 	if (map->map == NULL)
 		put_error_message_exit("ft_split ", 1);
+	free(map_str);
+	map_str = NULL;
 	get_map_size(map);
 	is_map(map);
 	return (1);
