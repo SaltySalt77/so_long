@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:02:46 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 17:32:56 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 18:16:27 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ static	char	*get_img_name(int	type)
 		return ("img/mincho.xpm");
 }
 
-static 
-
-void	get_img_ptr(void	*mlx_vars, t_img_vars	*img_vars)
+void	get_img_ptr(void	*mlx, t_img_vars	*img_vars)
 {
 	t_img_vars	*curt;
+	void		*img;
 	int			wid;
 	int			ht;;
 	int			type;
@@ -39,7 +38,10 @@ void	get_img_ptr(void	*mlx_vars, t_img_vars	*img_vars)
 	while (curt)
 	{
 		type = curt->type;
-		curt->img = mlx_xpm_file_to_image(mlx, get_img_name(type), &wid, &ht);
+		img = mlx_xpm_file_to_image(mlx, get_img_name(type), &wid, &ht);
+		if (img == NULL)
+			put_error_message_exit("Error!", 1);
+		curt->img_ptr = img;
 		curt->width = wid;
 		curt->height = ht;
 		curt = curt->next;

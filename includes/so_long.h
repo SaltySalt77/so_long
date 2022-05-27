@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:49:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 17:56:33 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 18:12:28 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_map_size {
 	struct s_img_vars	*img_vars;
 }	t_map_size;
 
+void	get_img_ptr(void	*mlx, t_img_vars	*img_vars);
 void	get_map_info(t_map_size	*map);
 void	put_error_message_exit(const char	*str, int error);
 int		is_map(t_map_size *map);

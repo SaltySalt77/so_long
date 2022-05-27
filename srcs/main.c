@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 17:59:58 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 18:12:53 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,7 @@ int	main(int argc, char	**argv)
 	if (mlx_vars.win == NULL)
 		put_error_message_exit("So long ", 1);
 	mlx_loop(mlx_vars.mlx);
+	get_img_ptr(mlx_vars.mlx, map.img_vars);
+	printf("done!!");
 	return (0);
 }
