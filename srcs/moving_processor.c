@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 21:42:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 00:33:29 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 01:20:37 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int	is_possible_movent(char	**map, t_img_vars	*img, int direction)
 		return (0);
 	img->xpos = ft_arrjoin(img->xpos, x, 1);
 	img->ypos = ft_arrjoin(img->ypos, y, 1);
+	img->count += 1;
 	return (1);
 }
 

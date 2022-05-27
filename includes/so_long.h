@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:49:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 00:35:13 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 02:20:25 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ void		get_map_info(t_map_size	*map);
 void		get_mlx_ptr(t_mlx_ptr	*mlx_vars, t_map_size	*map, char	*title);
 void		load_map(t_mlx_ptr	mlx_vars, t_map_size	*map);
 void		mv_player(t_mlx_ptr	*mlx_vars, char	**map, t_img_vars	*img);
+void		mv_to_air(t_mlx_ptr *mlx_vars, char	**map, t_img_vars	*img); 
+void		mv_to_colect(t_mlx_ptr *mlx_vars, char	**map, t_img_vars	*img); 
+void		mv_to_exit(t_mlx_ptr *mlx_vars, char	**map, t_img_vars	*img); 
 void		put_error_message_exit(const char	*str, int error);
 int			get_dest_type(char	**map, t_img_vars	*player);
 int			is_map(t_map_size *map);

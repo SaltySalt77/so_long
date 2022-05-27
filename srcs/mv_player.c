@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:12:16 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 00:39:44 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 02:21:26 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ static void	mv_from_exit(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 	mlx_put_image_to_window(mlx->mlx, mlx->win, curt->img_ptr, x * SIZE, y * SIZE);
 	curt = find_img_info(img, EXIT);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, curt->img_ptr, x * SIZE, y * SIZE);
-/*	if (type == COLECT)
-		mv_to_colect(map, img);
-	else if (tyep == EXIT)
-		mv_to_exit(map, img;
+	if (type == COLECT)
+		mv_to_colect(mlx, map, img);
+	else if (type == EXIT)
+		mv_to_exit(mlx, map, img);
 	else
-		mv_to_air(map, img);
-*/}
+		mv_to_air(mlx, map, img);
+}
 
 static void mv_from_air(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 {
@@ -51,13 +51,12 @@ static void mv_from_air(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 	type = get_dest_type(map, curt);
 	curt = find_img_info(img, AIR);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, curt->img_ptr, x * SIZE, y * SIZE);
-/*	if (type == COLECT)
-		mv_to_colect(map, img);
-	else if (tyep == EXIT)
-		mv_to_exit(map, img);
+	if (type == COLECT)
+		mv_to_colect(mlx, map, img);
+	else if (type == EXIT)
+		mv_to_exit(mlx, map, img);
 	else
-		mv_to_air(map, img);
-*/
+		mv_to_air(mlx, map, img);
 }
 
 static int starting_pt_is_exit(t_img_vars	*img)
