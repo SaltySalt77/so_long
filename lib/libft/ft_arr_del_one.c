@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 21:46:05 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 21:52:54 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 22:00:50 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int	*ft_arr_del_one(int	*arr, int *count, int idx)
 		j++;
 	}
 	*count -= 1;
+	free(arr);
 	return (new_arr);
 }
