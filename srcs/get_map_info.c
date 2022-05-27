@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:26 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 16:55:23 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 19:33:13 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,13 @@ static t_img_vars	*put_types_in_img_vars(t_img_vars	*head)
 	t_img_vars	*current;
 
 	current = head;
-	current->type = WALL;
+	current->type = AIR;
 	current->count = 0;
 	current->xpos = NULL;
 	current->ypos = NULL;
 	current->next = NULL;
+	current->next = new_img_vars(WALL);
+	current = current->next;
 	current->next = new_img_vars(COLECT);
 	current = current->next;
 	current->next = new_img_vars(EXIT);
@@ -70,10 +72,10 @@ void	get_map_info(t_map_size	*map)
 	y = 0;
 	head = malloc(sizeof(t_img_vars));
 	map->img_vars = put_types_in_img_vars(head);
-	while (y < map->height)
+	while (y < map->ht)
 	{
 		x = 0;
-		while (x < map->width)
+		while (x < map->wid)
 		{
 			if (map->map[y][x] == WALL)
 				update_positions(head, WALL, x, y);

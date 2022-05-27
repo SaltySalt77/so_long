@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 18:12:53 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 19:38:33 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,13 @@ int	main(int argc, char	**argv)
 	mlx_vars.mlx = mlx_init();
 	if (mlx_vars.mlx == NULL)
 		put_error_message_exit("So long ", 1);
-	win = mlx_new_window(mlx_vars.mlx, map.width * 64, map.height * 64, "so long");
+	win = mlx_new_window(mlx_vars.mlx, map.wid * SIZE, map.ht * SIZE, "so long");
 	mlx_vars.win = win;
 	if (mlx_vars.win == NULL)
 		put_error_message_exit("So long ", 1);
-	mlx_loop(mlx_vars.mlx);
 	get_img_ptr(mlx_vars.mlx, map.img_vars);
-	printf("done!!");
+	load_map(mlx_vars, &map);
+	printf("done!!\n");
+	mlx_loop(mlx_vars.mlx);
 	return (0);
 }

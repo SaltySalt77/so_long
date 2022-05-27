@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:20:15 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 18:07:57 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 19:03:01 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 static void	get_map_size(t_map_size	*map)
 {
-	int	height;
+	int	ht;
 
-	height = 0;
-	while (map->map[height] != NULL)
-		height++;
-	map->height = height;
-	map->width = ft_strlen(map->map[0]);
+	ht = 0;
+	while (map->map[ht] != NULL)
+		ht++;
+	map->ht = ht;
+	map->wid = ft_strlen(map->map[0]);
 }
 
 static char	*read_and_restore_map(char	*map_file)
