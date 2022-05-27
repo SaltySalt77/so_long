@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:49:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 19:49:18 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 21:35:02 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
-//need to change into wasd keys
-# define KEY_LEFT	123
-# define KEY_RIGHT	124
-# define KEY_DOWN	125
-# define KEY_UP		126
+
+# define KEY_UP		13
+# define KEY_LEFT	0
+# define KEY_DOWN	1
+# define KEY_RIGHT	2
 
 # define CLOSE_WIN	17
 
@@ -33,11 +33,6 @@
 # define PLAYER		80
 
 # define SIZE		32
-
-typedef struct s_mlx_ptr {
-	void	*mlx;
-	void	*win;
-}	t_mlx_ptr;
 
 typedef struct s_img_vars {
 	int					type;
@@ -57,11 +52,19 @@ typedef struct s_map_size {
 	struct s_img_vars	*img_vars;
 }	t_map_size;
 
-void	load_map(t_mlx_ptr	mlx_vars, t_map_size	*map);
+typedef struct s_mlx_ptr {
+	void				*mlx;
+	void				*win;
+	struct s_map_size	*map;
+}	t_mlx_ptr;
+
 void	get_img_ptr(void	*mlx, t_img_vars	*img_vars);
 void	get_map_info(t_map_size	*map);
+void	get_mlx_ptr(t_mlx_ptr	*mlx_vars, t_map_size	*map, char	*title);
+void	load_map(t_mlx_ptr	mlx_vars, t_map_size	*map);
 void	put_error_message_exit(const char	*str, int error);
 int		is_map(t_map_size *map);
 int		map_processor(char	*map_file, t_map_size	*map);
+int		moving_processor(int keycode, t_mlx_ptr	*mlx_vars);
 
 #endif
