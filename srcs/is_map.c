@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 03:53:46 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 04:48:23 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	is_square(t_map_size	*map)
 	}
 }
 
-static void check_counts(t_map_size	*map)
+static void	check_counts(t_map_size	*map)
 {
 	t_img_vars	*current;
 
@@ -60,13 +60,13 @@ static void check_counts(t_map_size	*map)
 	while (current)
 	{
 		if (current->type == COLECT && current->count < 1)
-				put_error_message_exit("needs at least one collectible.", 0);
+			put_error_message_exit("needs at least one collectible.", 0);
 		else if (current->type == EXIT && current->count < 1)
-				put_error_message_exit("needs at least one exit.", 0);
+			put_error_message_exit("needs at least one exit.", 0);
 		else if (current->type == PLAYER && current->count < 1)
-				put_error_message_exit("needs a starting point.", 0);
+			put_error_message_exit("needs a starting point.", 0);
 		else if (current->type == PLAYER && current->count > 1)
-				put_error_message_exit("needs just one starting point.", 0);
+			put_error_message_exit("needs just one starting point.", 0);
 		current = current->next;
 	}
 }

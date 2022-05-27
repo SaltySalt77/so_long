@@ -6,13 +6,13 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:02:46 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 19:10:51 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 04:41:53 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static	char	*get_imgs_name(int	type)
+static	char	*get_imgs_name(int type)
 {
 	if (type == AIR)
 		return ("./imgs/Background.xpm");
@@ -31,7 +31,7 @@ void	get_img_ptr(void	*mlx, t_img_vars	*img_vars)
 	t_img_vars	*curt;
 	void		*img;
 	int			wid;
-	int			ht;;
+	int			ht;
 	int			type;
 
 	curt = img_vars;

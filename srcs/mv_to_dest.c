@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 01:09:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 03:44:39 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 04:53:50 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	initialize_player_pos(t_img_vars	*img, int	*x, int	*y)
 static int	find_idx(t_img_vars	*img, int x)
 {
 	t_img_vars	*curt;
-	int	idx;
+	int			idx;
 
 	idx = 0;
 	curt = find_img_info(img, COLECT);
@@ -98,8 +98,8 @@ void	mv_to_exit(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 void	mv_to_air(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 {
 	t_img_vars	*curt;
-	int	x;
-	int	y;
+	int			x;
+	int			y;
 
 	curt = find_img_info(img, PLAYER);
 	initialize_player_pos(img, &x, &y);

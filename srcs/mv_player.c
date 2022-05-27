@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:12:16 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 03:42:05 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 04:53:13 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	mv_from_exit(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 		mv_to_air(mlx, map, img);
 }
 
-static void mv_from_air(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
+static void	mv_from_air(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 {
 	t_img_vars	*curt;
 	int			x;
@@ -63,7 +63,7 @@ static void mv_from_air(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 		mv_to_air(mlx, map, img);
 }
 
-static int starting_pt_is_exit(t_img_vars	*img)
+static int	starting_pt_is_exit(t_img_vars	*img)
 {
 	t_img_vars	*curt;
 	int			x;

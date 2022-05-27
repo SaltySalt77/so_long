@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 21:42:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 03:56:35 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 04:52:33 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	is_possible_movent(char	**map, t_img_vars	*img, int direction)
 	return (1);
 }
 
-t_img_vars	*find_img_info(t_img_vars	*img, int	type)
+t_img_vars	*find_img_info(t_img_vars	*img, int type)
 {
 	t_img_vars	*find;
 
@@ -55,7 +55,7 @@ int	get_dest_type(char	**map, t_img_vars	*player)
 	int	type;
 	int	x;
 	int	y;
-	
+
 	x = player->xpos[1];
 	y = player->ypos[1];
 	type = map[y][x];

@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 19:12:26 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 19:59:32 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 04:48:54 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	put_objects(void	*mlx, void	*win, t_img_vars	*img)
 {
-	int i;
+	int	i;
 	int	x;
-	int y;
+	int	y;
 
 	i = 0;
 	while (i < img->count)

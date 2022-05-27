@@ -6,21 +6,21 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 03:51:21 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 04:50:37 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "libft.h"
 
-static int	is_map_file(int	argc, char	**argv)
+static int	is_map_file(int argc, char	**argv)
 {
 	int		i;
 	char	*str;
 
 	i = 4;
 	if (argc == 1)
-		put_error_message_exit("need more arguments.", 0);	
+		put_error_message_exit("need more arguments.", 0);
 	else if (argc > 2)
 		put_error_message_exit("too many arguments.", 0);
 	str = ft_strnstr(argv[1], ".ber", ft_strlen(argv[1]));

@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:10:43 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 01:23:31 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 04:55:23 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_putstr_fd(char	*s, int fd);
 void	ft_striteri(char	*s, void (*f) (unsigned int, char *));
 int		ft_atoi(const char	*nptr);
 int		*ft_arrjoin(int	*arr, int newnbr, int count);
-int		*ft_arr_del_one(int	*arr, int	count, int idx);
+int		*ft_arr_del_one(int	*arr, int count, int idx);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
