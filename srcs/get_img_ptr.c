@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:02:46 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 04:41:53 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 05:54:09 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	get_img_ptr(void	*mlx, t_img_vars	*img_vars)
 		type = curt->type;
 		img = mlx_xpm_file_to_image(mlx, get_imgs_name(type), &wid, &ht);
 		if (img == NULL)
-			put_error_message_exit("get_img_ptr", 1);
+			put_error_message_exit("get_img_ptr ", 1);
 		curt->img_ptr = img;
 		curt->wid = wid;
 		curt->ht = ht;

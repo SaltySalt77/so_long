@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:26 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 04:46:24 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 05:55:41 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static t_img_vars	*new_img_vars(int type)
 
 	new = malloc(sizeof(t_img_vars));
 	if (!new)
-		return (NULL);
+		put_error_message_exit("new_img_vars ", 1);
 	new->type = type;
 	new->count = 0;
 	new->xpos = NULL;

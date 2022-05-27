@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:20:15 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:06:18 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 05:53:15 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*read_and_restore_map(char	*map_file)
 	map_str = malloc(1);
 	fd = open(map_file, O_RDONLY, 00444);
 	if (fd < 0)
-		return (0);
+		put_error_message_exit("read_and_restore_map ", 1);
 	while (1)
 	{
 		new_str = get_next_line(fd);

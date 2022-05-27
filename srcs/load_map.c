@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 19:12:26 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 04:48:54 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 06:01:12 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ static void	put_background(void	*mlx, void	*win, t_map_size	*map)
 
 void	load_map(t_mlx_ptr	mlx_vars, t_map_size	*map)
 {
-	t_img_vars	*img;
+	t_img_vars	*curt;
 
-	img = map->img_vars;
+	curt = map->img_vars;
 	put_background(mlx_vars.mlx, mlx_vars.win, map);
-	while (img)
+	while (curt)
 	{
-		put_objects(mlx_vars.mlx, mlx_vars.win, img);
-		img = img->next;
+		put_objects(mlx_vars.mlx, mlx_vars.win, curt);
+		curt = curt->next;
 	}
 }

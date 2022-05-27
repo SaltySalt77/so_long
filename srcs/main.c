@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:32:42 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 05:51:54 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	is_map_file(int argc, char	**argv)
 
 	i = 4;
 	if (argc == 1)
-		put_error_message_exit("need more arguments.", 0);
+		put_error_message_exit("need one more argument.", 0);
 	else if (argc > 2)
 		put_error_message_exit("too many arguments.", 0);
 	str = ft_strnstr(argv[1], ".ber", ft_strlen(argv[1]));
@@ -41,10 +41,11 @@ static int	exit_game(t_mlx_ptr	*mlx_vars)
 
 void	put_error_message_exit(const char	*str, int error)
 {
+	printf("Error\n");
 	if (error != 0)
 		perror(str);
 	else
-		printf("Error\n%s\n", str);
+		printf("%s\n", str);
 	exit(0);
 }
 
