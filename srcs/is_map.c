@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 04:48:23 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 06:20:05 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	is_surrounded_by_walls(t_map_size	*map)
 	int		i;
 
 	i = 0;
-	error_message = "the map must be surrounded by walls.";
+	error_message = "The map must be surrounded by walls.";
 	while (i < map->wid)
 	{
 		if (map->map[0][i] != WALL || map->map[map->ht - 1][i] != WALL)
@@ -42,7 +42,7 @@ static void	is_square(t_map_size	*map)
 	int		wid;
 
 	i = 0;
-	error_message = "the map must be square.";
+	error_message = "The map must be square.";
 	while (i < map->ht)
 	{
 		wid = (int) ft_strlen(map->map[i]);
@@ -60,13 +60,13 @@ static void	check_counts(t_map_size	*map)
 	while (current)
 	{
 		if (current->type == COLECT && current->count < 1)
-			put_error_message_exit("needs at least one collectible.", 0);
+			put_error_message_exit("Needs at least one collectible.", 0);
 		else if (current->type == EXIT && current->count < 1)
-			put_error_message_exit("needs at least one exit.", 0);
+			put_error_message_exit("Needs at least one exit.", 0);
 		else if (current->type == PLAYER && current->count < 1)
-			put_error_message_exit("needs a starting point.", 0);
+			put_error_message_exit("Needs a starting point.", 0);
 		else if (current->type == PLAYER && current->count > 1)
-			put_error_message_exit("needs just one starting point.", 0);
+			put_error_message_exit("Needs just one starting point.", 0);
 		current = current->next;
 	}
 }

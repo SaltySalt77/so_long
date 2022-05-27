@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:26 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:55:41 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 06:19:17 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static void	put_info_in_img_vars(t_map_size	*map, t_img_vars	*head)
 			else if (map->map[y][x] == PLAYER)
 				update_positions(head, PLAYER, x, y);
 			else if (map->map[y][x] != AIR)
-				put_error_message_exit("map mustn't have anouther alphabet", 0);
+				put_error_message_exit("Map mustn't have anouther alphabet", 0);
 			x++;
 		}
 		y++;

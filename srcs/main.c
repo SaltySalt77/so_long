@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:51:54 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 06:20:50 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static int	is_map_file(int argc, char	**argv)
 
 	i = 4;
 	if (argc == 1)
-		put_error_message_exit("need one more argument.", 0);
+		put_error_message_exit("Need one more argument.", 0);
 	else if (argc > 2)
-		put_error_message_exit("too many arguments.", 0);
+		put_error_message_exit("Too many arguments.", 0);
 	str = ft_strnstr(argv[1], ".ber", ft_strlen(argv[1]));
 	if (str == NULL)
 		return (0);
@@ -55,7 +55,7 @@ int	main(int argc, char	**argv)
 	t_map_size	map;
 
 	if (!is_map_file(argc, argv))
-		put_error_message_exit("the argument is not a map file.", 0);
+		put_error_message_exit("The argument is not a map file.", 0);
 	map_processor(argv[1], &map);
 	get_mlx_ptr(&mlx_vars, &map, "so_long");
 	get_img_ptr(mlx_vars.mlx, map.img_vars);
