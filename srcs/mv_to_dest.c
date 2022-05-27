@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 01:09:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 04:53:50 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 05:24:01 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	mv_to_colect(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 	void		*player_img;
 	int			x;
 	int			y;
+	int			idx;
 
 	initialize_player_pos(img, &x, &y);
 	curt = find_img_info(img, PLAYER);
@@ -68,9 +69,9 @@ void	mv_to_colect(t_mlx_ptr	*mlx, char	**map, t_img_vars	*img)
 	x /= SIZE;
 	y /= SIZE;
 	curt = find_img_info(img, COLECT);
-	x = find_idx(img, x);
-	curt->xpos = ft_arr_del_one(curt->xpos, curt->count, x);
-	curt->ypos = ft_arr_del_one(curt->ypos, curt->count, y);
+	idx = find_idx(img, x);
+	curt->xpos = ft_arr_del_one(curt->xpos, curt->count, idx);
+	curt->ypos = ft_arr_del_one(curt->ypos, curt->count, idx);
 	if (curt->xpos == NULL || curt->ypos == NULL)
 		put_error_message_exit("ft_arr_del_one ", 1);
 	curt->count--;

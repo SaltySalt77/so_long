@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:07:18 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 05:32:42 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	put_error_message_exit(const char	*str, int error)
 	if (error != 0)
 		perror(str);
 	else
-		printf("Error\n %s\n", str);
+		printf("Error\n%s\n", str);
 	exit(0);
 }
 
