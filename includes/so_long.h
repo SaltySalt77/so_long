@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:49:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 21:13:42 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 17:56:33 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ typedef struct s_map_size {
 void	get_map_info(t_map_size	*map);
 void	put_error_message_exit(const char	*str, int error);
 int		is_map(t_map_size *map);
-int		map_processor(char	*map_file, t_map_size	map);
+int		map_processor(char	*map_file, t_map_size	*map);
 
 #endif

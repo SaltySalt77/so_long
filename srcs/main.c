@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 21:34:08 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 17:59:58 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,20 @@ int	main(int argc, char	**argv)
 {
 	t_mlx_ptr	mlx_vars;
 	t_map_size	map;
+	void		*win;
 
 	if (argc == 1)
-		put_error_message_exit("Error! need more arguments.", 0);	
+		put_error_message_exit("need more arguments.", 0);	
 	else if (argc > 2)
-		put_error_message_exit("Error! too many arguments.", 0);
-	else if (!is_map_file(argv))
-		put_error_message_exit("Error! the arument is not a map.", 0);
-	if (!map_processor(argv[1], map))
-		put_error_message_exit("Error! map_processor ", 1);
+		put_error_message_exit("too many arguments.", 0);
+	map_processor(argv[1], &map);
+	mlx_vars.mlx = mlx_init();
+	if (mlx_vars.mlx == NULL)
+		put_error_message_exit("So long ", 1);
+	win = mlx_new_window(mlx_vars.mlx, map.width * 64, map.height * 64, "so long");
+	mlx_vars.win = win;
+	if (mlx_vars.win == NULL)
+		put_error_message_exit("So long ", 1);
+	mlx_loop(mlx_vars.mlx);
 	return (0);
 }

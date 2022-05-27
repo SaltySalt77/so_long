@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:20:15 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 21:09:21 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/27 17:54:56 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 #include "get_next_line.h"
 #include "libft.h"
 
-static t_map_size	get_map_size(t_map_size	map)
+static void	get_map_size(t_map_size	*map)
 {
 	int	height;
 
 	height = 0;
-	while (map.map[height] != NULL)
+	while (map->map[height] != NULL)
 		height++;
-	map.height = height;
-	map.width = ft_strlen(map.map[0]);
-	return (map);
+	map->height = height;
+	map->width = ft_strlen(map->map[0]);
 }
 
 static char	*read_and_restore_map(char	*map_file)
@@ -49,18 +48,15 @@ static char	*read_and_restore_map(char	*map_file)
 	return (map_str);
 }
 
-int	map_processor(char	*map_file, t_map_size	map)
+int	map_processor(char	*map_file, t_map_size	*map)
 {
 	char	*map_str;
 
 	map_str = read_and_restore_map(map_file);
-	map.map = ft_split(map_str, '\n');
-	if (map.map == NULL)
+	map->map = ft_split(map_str, '\n');
+	if (map->map == NULL)
 		return (0);
-	map = get_map_size(map);
-	if (is_map(&map))
-		printf("this is a map");
-	else
-		printf("this is not a map");
+	get_map_size(map);
+	is_map(map);
 	return (1);
 }

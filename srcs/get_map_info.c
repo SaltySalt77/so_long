@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_check2.c                                       :+:      :+:    :+:   */
+/*   get_map_info.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 19:40:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 21:14:00 by hyna             ###   ########.fr       */
+/*   Created: 2022/05/22 21:46:26 by hyna              #+#    #+#             */
+/*   Updated: 2022/05/27 16:55:23 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	get_map_info(t_map_size	*map)
 			else if (map->map[y][x] == PLAYER)
 				update_positions(head, PLAYER, x, y);
 			else if (map->map[y][x] != AIR)
-				put_error_message_exit("Error! map has anouther alphabet->", 0);
+				put_error_message_exit("map mustn't have anouther alphabet", 0);
 			x++;
 		}
 		y++;

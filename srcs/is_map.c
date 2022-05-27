@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_check.c                                        :+:      :+:    :+:   */
+/*   is_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 18:06:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/22 21:44:40 by hyna             ###   ########.fr       */
+/*   Created: 2022/05/22 21:46:09 by hyna              #+#    #+#             */
+/*   Updated: 2022/05/27 17:35:07 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	is_surrounded_by_walls(t_map_size	*map)
 	int		i;
 
 	i = 0;
-	error_message = "the map has to be surrounded by walls.";
+	error_message = "the map must be surrounded by walls.";
 	while (i < map->width)
 	{
 		if (map->map[0][i] != WALL || map->map[map->height - 1][i] != WALL)
@@ -41,7 +41,7 @@ static void	is_square(t_map_size	*map)
 	int		i;
 
 	i = 0;
-	error_message = "the map has to be square.";
+	error_message = "the map must be square.";
 	while (i < map->height)
 	{
 		if (ft_strlen(map->map[i]) != map->width)
