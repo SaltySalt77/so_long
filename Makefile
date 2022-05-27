@@ -6,7 +6,7 @@
 #    By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 12:17:02 by hyna              #+#    #+#              #
-#    Updated: 2022/05/27 21:33:28 by hyna             ###   ########.fr        #
+#    Updated: 2022/05/28 00:32:55 by hyna             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRCS_NAME = main.c\
 			get_img_ptr.c\
 			load_map.c\
 			get_mlx_ptr.c\
-			moving_processor.c
+			moving_processor.c\
+			mv_player.c
 SRCS_PATH = ./srcs
 SRCS = $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
 

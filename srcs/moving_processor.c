@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 21:42:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/27 22:47:04 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 00:33:29 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	is_possible_movent(char	**map, t_img_vars	*img, int direction)
 	return (1);
 }
 
-static t_img_vars	*find_img_info(t_img_vars	*img, int	type)
+t_img_vars	*find_img_info(t_img_vars	*img, int	type)
 {
 	t_img_vars	*find;
 
@@ -47,29 +47,16 @@ static t_img_vars	*find_img_info(t_img_vars	*img, int	type)
 	return (find);
 }
 
-static int	get_dest_type(char	**map, t_img_vars	*player)
+int	get_dest_type(char	**map, t_img_vars	*player)
 {
 	int	type;
+	int	x;
+	int	y;
 	
 	x = player->xpos[1];
 	y = player->ypos[1];
 	type = map[y][x];
 	return (type);
-}
-
-static void mv_from_air(char	**map, t_img_vars	*img, int direction)
-{
-	t_img_vars	*player;
-	t_img_vars	*dest;
-	int			x;
-	int			y;
-
-	player = find_img_info(img, PLAYER);
-	dest = find_img_info(img, get_dest_type(map, player));
-	map[y][x] = PLAYER;
-	x = player->xpos[0];
-	y = player->ypos[0];
-	map[y][x] = AIR;
 }
 
 int	moving_processor(int keycode, t_mlx_ptr	*mlx_vars)
@@ -82,6 +69,6 @@ int	moving_processor(int keycode, t_mlx_ptr	*mlx_vars)
 	player = find_img_info(map->img_vars, PLAYER);
 	if (!is_possible_movent(map->map, player, keycode))
 		return (1);
-	type = get_dest_type(map->map, player);
+	mv_player(mlx_vars, map->map, map->img_vars);
 	return (0);
 }
