@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 21:42:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:08:31 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 09:37:43 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static void	put_movment_count(t_img_vars	*img)
 
 int	moving_processor(int keycode, t_mlx_ptr	*mlx_vars)
 {
-	t_map_size	*map;
+	t_map_info	*map;
 	t_img_vars	*player;
 
 	if (keycode == ESC)

@@ -6,13 +6,13 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:23:57 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:56:20 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 09:38:09 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	get_mlx_ptr(t_mlx_ptr	*mlx_vars, t_map_size	*map, char	*title)
+void	get_mlx_ptr(t_mlx_ptr	*mlx_vars, t_map_info	*map, char	*title)
 {
 	int	wid;
 	int	ht;

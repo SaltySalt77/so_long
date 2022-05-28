@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:20:15 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:53:15 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 09:42:43 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "get_next_line.h"
 #include "libft.h"
 
-static void	get_map_size(t_map_size	*map)
+static void	get_map_size(t_map_info	*map)
 {
 	int	ht;
 
@@ -32,6 +32,8 @@ static char	*read_and_restore_map(char	*map_file)
 	char	*new_str;
 
 	map_str = malloc(1);
+	if (map_str == NULL)
+		put_error_message_exit("read_and_restore_map ", 1);
 	fd = open(map_file, O_RDONLY, 00444);
 	if (fd < 0)
 		put_error_message_exit("read_and_restore_map ", 1);
@@ -42,13 +44,13 @@ static char	*read_and_restore_map(char	*map_file)
 			break ;
 		map_str = ft_strjoin_free(map_str, new_str);
 		if (map_str == NULL)
-			put_error_message_exit("read_and_restor_map ", 1);
+			put_error_message_exit("read_and_restore_map ", 1);
 	}
 	close(fd);
 	return (map_str);
 }
 
-int	map_processor(char	*map_file, t_map_size	*map)
+int	map_processor(char	*map_file, t_map_info	*map)
 {
 	char	*map_str;
 

@@ -6,14 +6,14 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:09 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 06:20:05 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 09:38:07 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "libft.h"
 
-static void	is_surrounded_by_walls(t_map_size	*map)
+static void	is_surrounded_by_walls(t_map_info	*map)
 {
 	char	*error_message;
 	int		i;
@@ -35,7 +35,7 @@ static void	is_surrounded_by_walls(t_map_size	*map)
 	}
 }
 
-static void	is_square(t_map_size	*map)
+static void	is_square(t_map_info	*map)
 {
 	char	*error_message;
 	int		i;
@@ -52,7 +52,7 @@ static void	is_square(t_map_size	*map)
 	}
 }
 
-static void	check_counts(t_map_size	*map)
+static void	check_counts(t_map_info	*map)
 {
 	t_img_vars	*current;
 
@@ -71,7 +71,7 @@ static void	check_counts(t_map_size	*map)
 	}
 }
 
-int	is_map(t_map_size	*map)
+int	is_map(t_map_info	*map)
 {
 	is_square(map);
 	is_surrounded_by_walls(map);

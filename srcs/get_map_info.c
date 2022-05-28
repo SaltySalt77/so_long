@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:26 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 08:48:29 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 09:47:44 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void	update_positions(t_img_vars	*head, int type, int x, int y)
 	{
 		to_change->xpos = ft_arrjoin(to_change->xpos, x, to_change->count);
 		to_change->ypos = ft_arrjoin(to_change->ypos, y, to_change->count);
+		if (to_change->xpos == NULL || to_change->ypos == NULL)
+			put_error_message_exit("update_positions ", 1);
 		to_change->count++;
 	}
 }
@@ -63,7 +65,7 @@ static t_img_vars	*put_types_in_img_vars(t_img_vars	*head)
 	return (head);
 }
 
-static void	put_info_in_img_vars(t_map_size	*map, t_img_vars	*head)
+static void	put_info_in_img_vars(t_map_info	*map, t_img_vars	*head)
 {
 	int			y;
 	int			x;
@@ -90,7 +92,7 @@ static void	put_info_in_img_vars(t_map_size	*map, t_img_vars	*head)
 	}
 }
 
-void	get_map_info(t_map_size	*map)
+void	get_map_info(t_map_info	*map)
 {
 	t_img_vars	*head;
 

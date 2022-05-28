@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 12:41:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 06:20:50 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 09:37:59 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	put_error_message_exit(const char	*str, int error)
 int	main(int argc, char	**argv)
 {
 	t_mlx_ptr	mlx_vars;
-	t_map_size	map;
+	t_map_info	map;
 
 	if (!is_map_file(argc, argv))
 		put_error_message_exit("The argument is not a map file.", 0);
