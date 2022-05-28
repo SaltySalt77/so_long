@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:02:46 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 09:38:17 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 13:06:54 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ void	get_img_ptr(void	*mlx, t_img_vars	*img_vars)
 		if (img == NULL)
 			put_error_message_exit("get_img_ptr ", 1);
 		curt->img_ptr = img;
-		curt->wid = wid;
-		curt->ht = ht;
 		curt = curt->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:49:12 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 09:44:02 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 13:05:19 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@
 typedef struct s_img_vars {
 	int					type;
 	void				*img_ptr;
-	int					wid;
-	int					ht;
 	int					*xpos;
 	int					*ypos;
 	int					count;
