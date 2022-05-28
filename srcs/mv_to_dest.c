@@ -6,18 +6,12 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 01:09:30 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 05:24:01 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 09:02:25 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "libft.h"
-
-	//해줘야되는거
-	//1. 캐릭터 넣어주기
-	//2. 캐릭터 xpos ypos idx 0 없애기
-	//if colect : colect count 줄이고 어래이 하나 빼주기
-	//if exit : 나갈 수 있는 지 확인하고 니갈 수 있으면 종료
 
 static void	initialize_player_pos(t_img_vars	*img, int	*x, int	*y)
 {

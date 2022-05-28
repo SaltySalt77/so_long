@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:46:26 by hyna              #+#    #+#             */
-/*   Updated: 2022/05/28 06:19:17 by hyna             ###   ########.fr       */
+/*   Updated: 2022/05/28 08:48:29 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static t_img_vars	*new_img_vars(int type)
 	t_img_vars	*new;
 
 	new = malloc(sizeof(t_img_vars));
-	if (!new)
+	if (new == NULL)
 		put_error_message_exit("new_img_vars ", 1);
 	new->type = type;
 	new->count = 0;
@@ -95,6 +95,8 @@ void	get_map_info(t_map_size	*map)
 	t_img_vars	*head;
 
 	head = malloc(sizeof(t_img_vars));
+	if (head == NULL)
+		put_error_message_exit("get_map_info ", 1);
 	map->img_vars = put_types_in_img_vars(head);
 	put_info_in_img_vars(map, head);
 }
